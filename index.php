@@ -35,7 +35,7 @@ function isNewVersionAvailable($req) {
 
 try {
 	if (empty($_POST)) {
-		echo '<a href = "http://olivetin.app/_updateCheck.html">OliveTin Update Check Documentation</a>';
+		echo '<a href = "hhttps://www.olivetin.app/_update_checks_and_tracking.html">OliveTin Update Check Documentation</a>';
 		exit;
 	}
 
