@@ -1,3 +1,3 @@
 # update-check.olivetin.app
 
-https://www.olivetin.app/_update_checks_and_tracking.html
+[Documentation for the update check / tracking service](https://docs.olivetin.app/update-tracking.html)
