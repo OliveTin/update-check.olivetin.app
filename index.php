@@ -34,12 +34,16 @@ function storableVersionRequest($version)
 
 function getUpdatedVersion($req)
 {
-    $latest = '2022-01-06';
-    
+    $latest = '2024.02-28';
+
     $versionMap = array();
     $versionMap['dev'] = 'you-are-using-a-dev-build';
     $versionMap['2021-07-19'] = $latest;
     $versionMap['2021-11-19'] = $latest;
+    $versionMap['2022-01-06'] = $latest;
+    $versionMap['2023.12.01'] = $latest;
+    $versionMap['2024.02.01'] = $latest;
+    $versionMap['2024.02.27'] = $latest;
     $versionMap[$latest] = 'none'; // You are using the latest version.
 
     if (isset($versionMap[$req])) {
