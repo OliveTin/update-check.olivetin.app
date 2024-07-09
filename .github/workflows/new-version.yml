@@ -4,6 +4,7 @@ env:
   NEW_VERSION: ""
 
 on:
+  workflow_dispatch:
   workflow_call:
     inputs:
       newVersion:
