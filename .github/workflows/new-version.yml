@@ -11,6 +11,7 @@ on:
         type: string
         required: true
         description: "The new 'latest' version"
+        required: true
   
 jobs:
   update-versions-file:
@@ -26,9 +27,7 @@ jobs:
       run: |
         sed -i 's/\t"latest": .*/\t"latest": "${{ inputs.newVersion }}"/g' versions.json
 
-        - name: Commit and Push Changes
-
-    - name: Commit
+    - name: Commit and push changes
       run: |
         # configure user
         git config --global user.name "${{ github.actor }}"
