@@ -8,11 +8,13 @@ This is the source code for the OliveTin Update Check Service that runs at updat
 
 People may want to grab the "latest-2k" or "latest-3k" release in their scripts, like this;
 
+### latest-2k
 ```bash
 user@host: curl -sS https://raw.githubusercontent.com/OliveTin/update-check.olivetin.app/refs/heads/main/versions.json | jq -r '.["latest-2k"]'
 2025.11.06
 ```
 
+### latest-3k
 ```bash
 user@host: curl -sS https://raw.githubusercontent.com/OliveTin/update-check.olivetin.app/refs/heads/main/versions.json | jq -r '.["latest-3k"]'
 3000.3.2
