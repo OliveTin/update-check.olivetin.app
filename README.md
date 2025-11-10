@@ -11,6 +11,7 @@ Older versions of this repository contained code to run a web service, but this 
 
 People may want to grab the "latest-2k" or "latest-3k" release in their scripts, like this;
 
+### latest-2k
 ```bash
 #!/bin/bash
 
@@ -35,6 +36,7 @@ user@host: curl -sS https://raw.githubusercontent.com/OliveTin/update-check.oliv
 2025.11.06
 ```
 
+### latest-3k
 ```bash
 user@host: curl -sS https://raw.githubusercontent.com/OliveTin/update-check.olivetin.app/refs/heads/main/versions.json | jq -r '.["latest-3k"]'
 3000.3.2
