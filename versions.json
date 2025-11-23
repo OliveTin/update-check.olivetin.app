@@ -12,10 +12,10 @@
             "reason": "Bad version format"
         }
     },
-    "latest-2k": "2025.11.11",
+    "latest-2k": "2025.11.25",
     "latest-3k": "3000.4.0",
-    "latest-2k-download-baseurl": "https://github.com/OliveTin/OliveTin/releases/download/2025.11.11/",
+    "latest-2k-download-baseurl": "https://github.com/OliveTin/OliveTin/releases/download/2025.11.25/",
     "latest-3k-download-baseurl": "https://github.com/OliveTin/OliveTin/releases/download/3000.4.0/",
-    "latest-2k-release-url": "https://github.com/OliveTin/OliveTin/releases/2025.11.11/",
+    "latest-2k-release-url": "https://github.com/OliveTin/OliveTin/releases/2025.11.25/",
     "latest-3k-release-url": "https://github.com/OliveTin/OliveTin/releases/3000.4.0/"
 }
