@@ -26,21 +26,25 @@ def find_latest_versions():
     releases = get_releases()
     
     versions = {
-        "latest-2k": None, 
-        "latest-3k": None
+        "latest-2k": None,
+        "latest-2k-release": None,
+        "latest-3k": None,
+        "latest-3k-release": None
     }
 
     for release in releases:
         version_number = release["tag_name"]
 
         release_semver = semver.VersionInfo.parse(unpad_version(version_number))
-        
+
         if release_semver.major < 3000:
             if (versions["latest-2k"] is None) or (release_semver > semver.VersionInfo.parse(unpad_version(versions["latest-2k"]))):
                 versions["latest-2k"] = version_number
+                versions["latest-2k-release"] = release
         else:
             if (versions["latest-3k"] is None) or (release_semver > semver.VersionInfo.parse(unpad_version(versions["latest-3k"]))):
                 versions["latest-3k"] = version_number
+                versions["latest-3k-release"] = release
                 versions["latest"] = version_number
 
         print("Checking version: ", release_semver)
@@ -88,9 +92,25 @@ versions_file['latest-2k'] = latest_versions['latest-2k']
 versions_file['latest-2k-download-baseurl'] = f"https://github.com/OliveTin/OliveTin/releases/download/{latest_versions['latest-2k']}/"
 versions_file['latest-2k-release-url'] = f"https://github.com/OliveTin/OliveTin/releases/{latest_versions['latest-2k']}/"
 
+if latest_versions['latest-2k-release']:
+    packages_2k = {}
+    for asset in latest_versions['latest-2k-release'].get('assets', []):
+        packages_2k[asset['name']] = {
+            'download_url': asset['browser_download_url']
+        }
+    versions_file['latest-2k-packages'] = packages_2k
+
 versions_file['latest-3k'] = latest_versions['latest-3k']
 versions_file['latest-3k-download-baseurl'] = f"https://github.com/OliveTin/OliveTin/releases/download/{latest_versions['latest-3k']}/"
 versions_file['latest-3k-release-url'] = f"https://github.com/OliveTin/OliveTin/releases/{latest_versions['latest-3k']}/"
+
+if latest_versions['latest-3k-release']:
+    packages_3k = {}
+    for asset in latest_versions['latest-3k-release'].get('assets', []):
+        packages_3k[asset['name']] = {
+            'download_url': asset['browser_download_url']
+        }
+    versions_file['latest-3k-packages'] = packages_3k
 
 versions_file['latest'] = latest_versions['latest-3k']
 
