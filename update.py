@@ -59,6 +59,49 @@ def get_latest_version():
         sys.exit(1)
     return json.loads(response.text)["tag_name"]
 
+def get_checksums_from_release(release):
+    """
+    Download and parse checksums.txt from a release.
+    Returns a dictionary mapping package filename to checksum.
+    """
+    if not release:
+        return {}
+    
+    # Find the checksums.txt asset
+    checksums_asset = None
+    for asset in release.get('assets', []):
+        if asset['name'] == 'checksums.txt':
+            checksums_asset = asset
+            break
+    
+    if not checksums_asset:
+        return {}
+    
+    # Download the checksums file
+    response = requests.get(checksums_asset['browser_download_url'])
+    if response.status_code != 200:
+        print(f"Warning: Failed to download checksums.txt for {release.get('tag_name', 'unknown')}")
+        return {}
+    
+    # Parse the checksums file
+    # Format is always: "<sha256checksum><2 spaces><filename>"
+    checksums = {}
+    for line in response.text.strip().split('\n'):
+        line = line.strip()
+        if not line:
+            continue
+        
+        # Split on exactly two spaces
+        if '  ' in line:
+            parts = line.split('  ', 1)
+            if len(parts) == 2:
+                checksum = parts[0].strip()
+                filename = parts[1].strip()
+                if checksum and filename:
+                    checksums[filename] = checksum
+    
+    return checksums
+
 def load_versions_file():
     with open("versions.json", "r") as f:
         return json.load(f)
@@ -93,11 +136,15 @@ versions_file['latest-2k-download-baseurl'] = f"https://github.com/OliveTin/Oliv
 versions_file['latest-2k-release-url'] = f"https://github.com/OliveTin/OliveTin/releases/{latest_versions['latest-2k']}/"
 
 if latest_versions['latest-2k-release']:
+    checksums_2k = get_checksums_from_release(latest_versions['latest-2k-release'])
     packages_2k = {}
     for asset in latest_versions['latest-2k-release'].get('assets', []):
-        packages_2k[asset['name']] = {
+        package_info = {
             'download_url': asset['browser_download_url']
         }
+        if asset['name'] in checksums_2k:
+            package_info['checksum'] = checksums_2k[asset['name']]
+        packages_2k[asset['name']] = package_info
     versions_file['latest-2k-packages'] = packages_2k
 
 versions_file['latest-3k'] = latest_versions['latest-3k']
@@ -105,11 +152,15 @@ versions_file['latest-3k-download-baseurl'] = f"https://github.com/OliveTin/Oliv
 versions_file['latest-3k-release-url'] = f"https://github.com/OliveTin/OliveTin/releases/{latest_versions['latest-3k']}/"
 
 if latest_versions['latest-3k-release']:
+    checksums_3k = get_checksums_from_release(latest_versions['latest-3k-release'])
     packages_3k = {}
     for asset in latest_versions['latest-3k-release'].get('assets', []):
-        packages_3k[asset['name']] = {
+        package_info = {
             'download_url': asset['browser_download_url']
         }
+        if asset['name'] in checksums_3k:
+            package_info['checksum'] = checksums_3k[asset['name']]
+        packages_3k[asset['name']] = package_info
     versions_file['latest-3k-packages'] = packages_3k
 
 versions_file['latest'] = latest_versions['latest-3k']
