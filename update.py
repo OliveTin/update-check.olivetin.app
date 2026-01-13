@@ -35,6 +35,10 @@ def find_latest_versions():
     for release in releases:
         version_number = release["tag_name"]
 
+        if "beta" in version_number.lower():
+            print(f"Skipping beta version: {version_number}")
+            continue
+
         release_semver = semver.VersionInfo.parse(unpad_version(version_number))
 
         if release_semver.major < 3000:
