@@ -1,6 +1,6 @@
 {
     "apiVersion": 2,
-    "latest": "3000.16.2",
+    "latest": "3000.17.0",
     "history": {
         "2021-11-06": "security"
     },
@@ -13,11 +13,11 @@
         }
     },
     "latest-2k": "2025.11.25",
-    "latest-3k": "3000.16.2",
+    "latest-3k": "3000.17.0",
     "latest-2k-download-baseurl": "https://github.com/OliveTin/OliveTin/releases/download/2025.11.25/",
-    "latest-3k-download-baseurl": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/",
+    "latest-3k-download-baseurl": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/",
     "latest-2k-release-url": "https://github.com/OliveTin/OliveTin/releases/2025.11.25/",
-    "latest-3k-release-url": "https://github.com/OliveTin/OliveTin/releases/3000.16.2/",
+    "latest-3k-release-url": "https://github.com/OliveTin/OliveTin/releases/3000.17.0/",
     "latest-2k-packages": {
         "checksums.txt": {
             "download_url": "https://github.com/OliveTin/OliveTin/releases/download/2025.11.25/checksums.txt"
@@ -153,139 +153,139 @@
     },
     "latest-3k-packages": {
         "checksums.txt": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/checksums.txt"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/checksums.txt"
         },
         "OliveTin-darwin-amd64.tar.gz": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-darwin-amd64.tar.gz",
-            "checksum": "cd664608be8aa8544e8a9a574d61230f69c4342a24e25dfc6d6de8eda17da216"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-darwin-amd64.tar.gz",
+            "checksum": "aa734ef1fd8c3669f5ce0f49f4b3d6ca17e5d0576936ea14b248348379f5f66e"
         },
         "OliveTin-darwin-arm64.tar.gz": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-darwin-arm64.tar.gz",
-            "checksum": "1ad3e8372454285585e311f7d627d995d30e4c558b3c955139ac256a2cb998f0"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-darwin-arm64.tar.gz",
+            "checksum": "553d65506aaef5d592b3949f3810400972a5c71ba9e2337f6cd22776c82c0280"
         },
         "OliveTin-freebsd-amd64.tar.gz": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-freebsd-amd64.tar.gz",
-            "checksum": "911f2819459083a54d6c71d61dd8e362d8ca9a983d693ba357dc0b06050eb6d4"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-freebsd-amd64.tar.gz",
+            "checksum": "b0e738ed13a9d69fbd6e05630a3a9139e5e04e71ef022335368f7dce13fc41f6"
         },
         "OliveTin-freebsd-arm5.tar.gz": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-freebsd-arm5.tar.gz",
-            "checksum": "8e498d69c6165fa5d8c0ce6a28c3c72df1fde72604f07e46b6e94ccac92fc82b"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-freebsd-arm5.tar.gz",
+            "checksum": "45eda86464d5705cef08a7b3d0e16c2b4fb09d947c3ff929bbf51f2f6d318e73"
         },
         "OliveTin-freebsd-arm6.tar.gz": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-freebsd-arm6.tar.gz",
-            "checksum": "4b9346d0db7ac73d0c2998eab33685014e82fc52a65903db733c5d526bff33a1"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-freebsd-arm6.tar.gz",
+            "checksum": "f8143b85d5398e1dfb85fd81e85fbaeede6188d168ce59d25022c1432df49e16"
         },
         "OliveTin-freebsd-arm64.tar.gz": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-freebsd-arm64.tar.gz",
-            "checksum": "ed15d15f2c3a310afe6f1fa3a5138a68fb3ec7228f3d660c47e185f6ad7c8419"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-freebsd-arm64.tar.gz",
+            "checksum": "6ce9577912839bf3cc289a75ca8f54ba1b6dcdfe263f6664f449b94e5851c75b"
         },
         "OliveTin-freebsd-arm7.tar.gz": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-freebsd-arm7.tar.gz",
-            "checksum": "8d3a8280a3e66e6426c0844ff01f98a2a7c2177ce721fcbd9399565c1024ac54"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-freebsd-arm7.tar.gz",
+            "checksum": "98b23970d69ce9f12c82d55e7211351eb0437395be567a6eae0fdf0670a01496"
         },
         "OliveTin-linux-amd64.tar.gz": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-linux-amd64.tar.gz",
-            "checksum": "a7295c26dc955d95af1869426bd4e11d5935d6b5865f72dfac6b0afc29f7baf5"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-linux-amd64.tar.gz",
+            "checksum": "eebf32945ce8446dfbf7497c5befdee84f5144ae39dbb4680fcb8eec9ec2500a"
         },
         "OliveTin-linux-arm5.tar.gz": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-linux-arm5.tar.gz",
-            "checksum": "629ddf3c5b5abcf9129a3ad3bb258b9067a0083dceeaf3ac97986542be589588"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-linux-arm5.tar.gz",
+            "checksum": "96c58761b82d27d06ea3c5cbdb20ab4fac09cf7bc10ec43ce24c6d000f80651c"
         },
         "OliveTin-linux-arm6.tar.gz": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-linux-arm6.tar.gz",
-            "checksum": "509e682649a4d8bddab24fe26f932b73415b45b0c2dd0184b57febbca5f69422"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-linux-arm6.tar.gz",
+            "checksum": "95f2bdfdd60ea4dd7036b0ff6dc01cab9ed36630c6a7c2ea61fc6040158df302"
         },
         "OliveTin-linux-arm64.tar.gz": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-linux-arm64.tar.gz",
-            "checksum": "eabad589acc08ccc59ac20d10aa8a37685c1f662520fb4fae5ed254c744d0b0c"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-linux-arm64.tar.gz",
+            "checksum": "5bc43945c62b90e6514c69048f76ae7f2941aae35392ab0c15a52dbd80e1ecc5"
         },
         "OliveTin-linux-arm7.tar.gz": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-linux-arm7.tar.gz",
-            "checksum": "749e80cb61ecf06282b584454adcd7a4c23b28179a5a8994e0150418e59f6447"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-linux-arm7.tar.gz",
+            "checksum": "3c0803644d58e38ffe5f70c29ad6ebc50d14c679aaf690e7bad4ab11320cf5f3"
         },
         "OliveTin-linux-riscv64.tar.gz": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-linux-riscv64.tar.gz",
-            "checksum": "1f0603688db176057f12253d8ed7dcb8991f62c7a8009aefac26e3fe1a3326f6"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-linux-riscv64.tar.gz",
+            "checksum": "f8fdcb95291c048067a0b6f80626d838ddb654fe11e53c0e26e60de9540f0d1f"
         },
         "OliveTin-windows-amd64.msi": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-windows-amd64.msi",
-            "checksum": "b7e6efc914933859338eda99b48edaad1cd0b5b33ae3717cf2f2c1d9ce93d3d0"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-windows-amd64.msi",
+            "checksum": "9cbcb981a3e5cbc4aafbd145101d38b1c513e43cfdfbdd4f5178abdc61bb2e0c"
         },
         "OliveTin-windows-amd64.zip": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin-windows-amd64.zip",
-            "checksum": "bd651a1e1342d18e41b10362608c6296d49cc7ec3a4932302e7bfe770174b3bf"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin-windows-amd64.zip",
+            "checksum": "0ef67fb1ce68e5896b135192a1b3c9b3ddeca4574dd0b484af00592ebd5f4d23"
         },
         "OliveTin_linux_amd64.apk": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_amd64.apk",
-            "checksum": "e97d4b172643676d5ba16ad188385f2f7fd7fa1a06c75dd9d06f6d43bbf99e2f"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_amd64.apk",
+            "checksum": "47550e58ada8d7dc2a3ee337996f3872d0b751271f2ba86a1eddb1a8cbdffde3"
         },
         "OliveTin_linux_amd64.deb": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_amd64.deb",
-            "checksum": "ed90e393dc9acfc58a101deeefef12880f585463a293912b30bf4a427138d4d2"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_amd64.deb",
+            "checksum": "f7359e99deb1d6fa338e210a49aa3c27e305c5a5070ce1af1c6d31427ffa2655"
         },
         "OliveTin_linux_amd64.rpm": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_amd64.rpm",
-            "checksum": "1e9d365cff3e09c05f701ec10b83a6807cef8d821d41e4bc4a6c01fa02293afc"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_amd64.rpm",
+            "checksum": "1b557418ad7a83e6b4610763be2fe954c6c797cd3a5abc3b2bc5f5b460d61567"
         },
         "OliveTin_linux_arm64.apk": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_arm64.apk",
-            "checksum": "6f9b92482a4e0b4cfc59b482d66d00ceb63d4b4a353f3805e61ecdc65b90484f"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_arm64.apk",
+            "checksum": "f6ec368516278dc7d0d6c46041b2ccf66b45f98e150dd358748c7a3b8f7a9d87"
         },
         "OliveTin_linux_arm64.deb": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_arm64.deb",
-            "checksum": "e1cdd93b4903aaadd8ee3a311e7bc348444d9726df816af9b350f4eaa271643c"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_arm64.deb",
+            "checksum": "38f1ec7e43d71c036aaa85c45bfd8fb3f4a3976376543af2d1356bcc689cf408"
         },
         "OliveTin_linux_arm64.rpm": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_arm64.rpm",
-            "checksum": "e6bfef725edebab8640412b9cd6f6d0cae2fa3c71d7f22ab0ef851e97056deb1"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_arm64.rpm",
+            "checksum": "aee84eba481c56d925f97d52b2f56a585193cc0802ca57989527dc3906c8c6ff"
         },
         "OliveTin_linux_armv5.apk": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_armv5.apk",
-            "checksum": "e8420bdef8cb4017008e8d401a466a50dd916ad0792cd912806abfec06d6e494"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_armv5.apk",
+            "checksum": "95ff96b5b49e919e9f15c0250e7b275c64b7cd035a81d0aa1f6fbd6edf974bd7"
         },
         "OliveTin_linux_armv5.deb": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_armv5.deb",
-            "checksum": "af1e450227ad08511bd154af286c48205cfd3a9a99104399a2b81b09e4d269a0"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_armv5.deb",
+            "checksum": "657061c963caac0e205d040206c3181988107ea4ca0ef54080640156a0f3c996"
         },
         "OliveTin_linux_armv5.rpm": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_armv5.rpm",
-            "checksum": "be64a243d8f860331298817cc18cf7af2415302913d1c6e43e78d96ed84080dd"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_armv5.rpm",
+            "checksum": "1a7257ffcfee594d9b92c795e26d9703511b88375922b575b6bce192b4286efe"
         },
         "OliveTin_linux_armv6.apk": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_armv6.apk",
-            "checksum": "d3574497cc7d956dabec51bd7760ea53f424377b5cc095a9962c3915f6330014"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_armv6.apk",
+            "checksum": "de21eed0f2b07bf4ea28d3ca9da381dd62f055e75ebd520a9d04bc30d30d4fa6"
         },
         "OliveTin_linux_armv6.deb": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_armv6.deb",
-            "checksum": "1421a88c2b5caa9d60a5e5d92016f07ff2ef9e568e308b37d7f43ea34365a77a"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_armv6.deb",
+            "checksum": "b6b3e7264601f7a10f914a28aa4f26b37a24748748ee9411899320bd2c2abdea"
         },
         "OliveTin_linux_armv6.rpm": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_armv6.rpm",
-            "checksum": "efb49a5fe58c8ab950d52785e164661a5c6b5ea1ee9c7f5c44bc50418cbe2dcd"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_armv6.rpm",
+            "checksum": "fc311a21eb60bb97c7cea0c97038feee8cd5ff3dd34a0aed08d75b98648a62f2"
         },
         "OliveTin_linux_armv7.apk": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_armv7.apk",
-            "checksum": "90339e957387a03709a2d340a23b468e746162a40665996e8eaec139ec2bdadd"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_armv7.apk",
+            "checksum": "d85a3c76cbd4245a55d797865a6f798b70558db9fde1ed215320db48f2df3e5c"
         },
         "OliveTin_linux_armv7.deb": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_armv7.deb",
-            "checksum": "c9e774b809202b09757b88f01f6837311b87605596d4d9063f8a52b4573cf9f3"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_armv7.deb",
+            "checksum": "588046a9630363c648fa7ae4377da24a3240544ea97bd6edb0ae8485f607bae0"
         },
         "OliveTin_linux_armv7.rpm": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_armv7.rpm",
-            "checksum": "b2b0e68b4d98fcb27f7cd9a1424cd9d3557badb5428b5498c3fce1428dca93f6"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_armv7.rpm",
+            "checksum": "6c24d0e9a878a79d0251242d05953bf790e4013ca0a0124715c380afe5687bfe"
         },
         "OliveTin_linux_riscv64.apk": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_riscv64.apk",
-            "checksum": "372e80564ec6b886b32c09cb4d1eb2461a9d85c6f91c1ebee37a170bec041dca"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_riscv64.apk",
+            "checksum": "d14d1885b8ee4e0f0798985713d71a3d90f806b9b19a239f63d197c0590544d1"
         },
         "OliveTin_linux_riscv64.deb": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_riscv64.deb",
-            "checksum": "fc3ae95d00a5036b6cd684d97bcc95f04ba370bb0da845a0704a179fdaefffa3"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_riscv64.deb",
+            "checksum": "b8d42d81c85fbb9a68bfe4d67bf9ed3494698a4315d5e11262a2552094dc0b60"
         },
         "OliveTin_linux_riscv64.rpm": {
-            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.16.2/OliveTin_linux_riscv64.rpm",
-            "checksum": "eb33d8f0dd24ea5d07dd8d4e1104148be51586579fbf7b11b3b281fe96d9a441"
+            "download_url": "https://github.com/OliveTin/OliveTin/releases/download/3000.17.0/OliveTin_linux_riscv64.rpm",
+            "checksum": "768a4e3e51e2b94a6dd44a1bf49d2f2bad4091949fadf5e8f803b417be9f410f"
         }
     }
 }
