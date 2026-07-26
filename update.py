@@ -11,12 +11,28 @@ import semver
 
 def get_releases():
     url = "https://api.github.com/repos/OliveTin/OliveTin/releases"
-    response = requests.get(url)
+    releases = []
+    page = 1
 
-    if response.status_code != 200:
-        print("Failed to get release information.")
-        sys.exit(1)
-    return json.loads(response.text)
+    while True:
+        response = requests.get(url, params={"per_page": 100, "page": page})
+
+        if response.status_code != 200:
+            print("Failed to get release information.")
+            sys.exit(1)
+
+        page_releases = json.loads(response.text)
+        if not page_releases:
+            break
+
+        releases.extend(page_releases)
+
+        if 'rel="next"' not in response.headers.get("Link", ""):
+            break
+
+        page += 1
+
+    return releases
 
 # replace 0 padded numbers
 def unpad_version(version_number):
@@ -39,7 +55,11 @@ def find_latest_versions():
             print(f"Skipping beta version: {version_number}")
             continue
 
-        release_semver = semver.VersionInfo.parse(unpad_version(version_number))
+        try:
+            release_semver = semver.VersionInfo.parse(unpad_version(version_number))
+        except (ValueError, TypeError):
+            print(f"Skipping invalid version: {version_number}")
+            continue
 
         if release_semver.major < 3000:
             if (versions["latest-2k"] is None) or (release_semver > semver.VersionInfo.parse(unpad_version(versions["latest-2k"]))):
@@ -120,58 +140,61 @@ def commit_changes_to_git(latest_version):
     os.system("git commit -m 'Update versions.json for " + latest_version + "'")
     os.system("git push")
 
-latest_versions = find_latest_versions()
+def main():
+    latest_versions = find_latest_versions()
 
+    print("Latest 2k version: " + str(latest_versions['latest-2k']))
+    print("Latest 3k version: " + str(latest_versions['latest-3k']))
 
-print("Latest 2k version: " + latest_versions['latest-2k'])
-print("Latest 3k version: " + latest_versions['latest-3k'])
+    versions_file = load_versions_file()
+    old_versions_file = versions_file.copy()
 
-versions_file = load_versions_file()
-old_versions_file = versions_file.copy()
+    if 'latest-2k' not in versions_file:
+        versions_file['latest-2k'] = None
 
-if 'latest-2k' not in versions_file:
-    versions_file['latest-2k'] = None
+    if 'latest-3k' not in versions_file:
+        versions_file['latest-3k'] = None
 
-if 'latest-3k' not in versions_file:
-    versions_file['latest-3k'] = None
+    versions_file['latest-2k'] = latest_versions['latest-2k']
+    versions_file['latest-2k-download-baseurl'] = f"https://github.com/OliveTin/OliveTin/releases/download/{latest_versions['latest-2k']}/"
+    versions_file['latest-2k-release-url'] = f"https://github.com/OliveTin/OliveTin/releases/{latest_versions['latest-2k']}/"
 
-versions_file['latest-2k'] = latest_versions['latest-2k']
-versions_file['latest-2k-download-baseurl'] = f"https://github.com/OliveTin/OliveTin/releases/download/{latest_versions['latest-2k']}/"
-versions_file['latest-2k-release-url'] = f"https://github.com/OliveTin/OliveTin/releases/{latest_versions['latest-2k']}/"
+    if latest_versions['latest-2k-release']:
+        checksums_2k = get_checksums_from_release(latest_versions['latest-2k-release'])
+        packages_2k = {}
+        for asset in latest_versions['latest-2k-release'].get('assets', []):
+            package_info = {
+                'download_url': asset['browser_download_url']
+            }
+            if asset['name'] in checksums_2k:
+                package_info['checksum'] = checksums_2k[asset['name']]
+            packages_2k[asset['name']] = package_info
+        versions_file['latest-2k-packages'] = packages_2k
 
-if latest_versions['latest-2k-release']:
-    checksums_2k = get_checksums_from_release(latest_versions['latest-2k-release'])
-    packages_2k = {}
-    for asset in latest_versions['latest-2k-release'].get('assets', []):
-        package_info = {
-            'download_url': asset['browser_download_url']
-        }
-        if asset['name'] in checksums_2k:
-            package_info['checksum'] = checksums_2k[asset['name']]
-        packages_2k[asset['name']] = package_info
-    versions_file['latest-2k-packages'] = packages_2k
+    versions_file['latest-3k'] = latest_versions['latest-3k']
+    versions_file['latest-3k-download-baseurl'] = f"https://github.com/OliveTin/OliveTin/releases/download/{latest_versions['latest-3k']}/"
+    versions_file['latest-3k-release-url'] = f"https://github.com/OliveTin/OliveTin/releases/{latest_versions['latest-3k']}/"
 
-versions_file['latest-3k'] = latest_versions['latest-3k']
-versions_file['latest-3k-download-baseurl'] = f"https://github.com/OliveTin/OliveTin/releases/download/{latest_versions['latest-3k']}/"
-versions_file['latest-3k-release-url'] = f"https://github.com/OliveTin/OliveTin/releases/{latest_versions['latest-3k']}/"
+    if latest_versions['latest-3k-release']:
+        checksums_3k = get_checksums_from_release(latest_versions['latest-3k-release'])
+        packages_3k = {}
+        for asset in latest_versions['latest-3k-release'].get('assets', []):
+            package_info = {
+                'download_url': asset['browser_download_url']
+            }
+            if asset['name'] in checksums_3k:
+                package_info['checksum'] = checksums_3k[asset['name']]
+            packages_3k[asset['name']] = package_info
+        versions_file['latest-3k-packages'] = packages_3k
 
-if latest_versions['latest-3k-release']:
-    checksums_3k = get_checksums_from_release(latest_versions['latest-3k-release'])
-    packages_3k = {}
-    for asset in latest_versions['latest-3k-release'].get('assets', []):
-        package_info = {
-            'download_url': asset['browser_download_url']
-        }
-        if asset['name'] in checksums_3k:
-            package_info['checksum'] = checksums_3k[asset['name']]
-        packages_3k[asset['name']] = package_info
-    versions_file['latest-3k-packages'] = packages_3k
+    versions_file['latest'] = latest_versions['latest-3k']
 
-versions_file['latest'] = latest_versions['latest-3k']
+    if versions_file != old_versions_file:
+        print("Updating versions.json file.")
+        save_versions_file(versions_file)
+        commit_changes_to_git(f"{latest_versions['latest-2k']} / {latest_versions['latest-3k']}")
+    else:
+        print("No updates to versions.json needed.")
 
-if versions_file != old_versions_file:
-    print("Updating versions.json file.")
-    save_versions_file(versions_file)
-    commit_changes_to_git(latest_versions['latest-2k'] + ' / ' + latest_versions['latest-3k'])
-else:
-    print("No updates to versions.json needed.")
+if __name__ == "__main__":
+    main()
